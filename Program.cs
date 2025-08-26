@@ -1,76 +1,39 @@
 ﻿
 using System;
+using System.Linq;
+
 
 class Test
 {
     public static void Main(string[] args)
     {
 
-        // int num1 = Convert.ToInt32(Console.ReadLine());
-        // int num2 = Convert.ToInt32(Console.ReadLine());
-        // int sum = num1 + num2;
-
-        // Console.WriteLine("Sum=" + sum);
-
-        // if (sum > 5)
-        // {
-        //     Console.WriteLine("This is a good number");
-
-        // }
-        // else if (sum > 7)
-        // {
-        //     Console.WriteLine("This is a good number");
-        // }
-        // else
-        // {
-        //     Console.WriteLine("This is bad number");
-        // }
-
-        // switch (sum)
-        // {
-        //     case int n when n > 7:
-        //         Console.WriteLine("This is a good number");
-        //         break;
-
-        //     case int n when n > 5:
-        //         Console.WriteLine("This is a moderate number");
-        //         break;
-
-        //     default:
-        //         Console.WriteLine("This is Bad Number");
-        //         break;
 
 
-        // }
+        // Student s1 = new Student();
+        // s1.Name = "Junaid";
+        // s1.Age = 23;
+        // s1.ShowInfo();
+
+        int[] numbers = { 4, 5, 6, 3, 5, 6, 44, 66, 4, 55, 9 };
 
 
-        // int[] numbers = { 10, 30, 40, 60 };
+        var result = from n in numbers
+                     where n < 10
+                     orderby n
+                     select n;
 
-        // for (int i = 0; i < numbers.Length; i++)
-        // {
-        //     Console.WriteLine($"The {i} number is {numbers[i]}");
-        // }
+        Console.WriteLine("The numbers are :");
 
-        // string[] names = { "A", "B", "C" };
-
-        // foreach (string n in names)
-        // {
-        //     // Console.WriteLine(n);
-        //     Console.WriteLine(string.Join(" ", names));
-
-        // }
-
-        int num1 = 200;
-        int num2 = 300;
-        int result = addTwoNum(num1, num2);
-
-        Console.WriteLine("The Sum is= " + result);
+        foreach (var n in result)
+        {
+            Console.Write(n + " ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Joined:" + string.Join(",", result.ToArray()));
 
 
     }
 
-    static int addTwoNum(int num1, int num2)
-    {
-        return num1 + num2;
-    }
+
 }
