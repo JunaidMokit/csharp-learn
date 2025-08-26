@@ -44,21 +44,33 @@ class Test
         // }
 
 
-        int[] numbers = { 10, 30, 40, 60 };
+        // int[] numbers = { 10, 30, 40, 60 };
 
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            Console.WriteLine($"The {i} number is {numbers[i]}");
-        }
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     Console.WriteLine($"The {i} number is {numbers[i]}");
+        // }
 
-        string[] names = { "A", "B", "C" };
+        // string[] names = { "A", "B", "C" };
 
-        foreach (string n in names)
-        {
-            // Console.WriteLine(n);
-            Console.WriteLine(string.Join(" ", names));
-        }
+        // foreach (string n in names)
+        // {
+        //     // Console.WriteLine(n);
+        //     Console.WriteLine(string.Join(" ", names));
+
+        // }
+
+        int num1 = 200;
+        int num2 = 300;
+        int result = addTwoNum(num1, num2);
+
+        Console.WriteLine("The Sum is= " + result);
 
 
+    }
+
+    static int addTwoNum(int num1, int num2)
+    {
+        return num1 + num2;
     }
 }
