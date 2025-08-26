@@ -51,5 +51,14 @@ class Test
             Console.WriteLine($"The {i} number is {numbers[i]}");
         }
 
+        string[] names = { "A", "B", "C" };
+
+        foreach (string n in names)
+        {
+            // Console.WriteLine(n);
+            Console.WriteLine(string.Join(" ", names));
+        }
+
+
     }
 }
