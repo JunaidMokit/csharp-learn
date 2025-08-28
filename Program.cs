@@ -27,10 +27,41 @@ class Test
 
         foreach (var n in result)
         {
-            Console.Write(n + " ");
+            // Console.Write(n + " ");
         }
-        Console.WriteLine();
-        Console.WriteLine("Joined:" + string.Join(",", result.ToArray()));
+
+        var result2 = numbers.Where(n => n < 10)
+                             .OrderBy(n => n)
+                             .Select(n => n);
+        foreach (var n in result2)
+        {
+            // Console.Write(n + " ");
+
+        }
+
+        string[] names = { "Junaid", "Rahman", "Mokit", "Ali" };
+
+        var result3 = names.Where(name => name.StartsWith("M"));
+        var result4 = names.Where(name => name.EndsWith("d"));
+        foreach (var n in result4)
+        {
+            // Console.WriteLine(n);
+        }
+
+        string[] namesAll = { "Ali", "Anik", "Babul", "Bashir", "Mokit" };
+
+        var groups = from n in namesAll
+                     group n by n[0];
+        foreach (var g in groups)
+        {
+            Console.WriteLine($"Group {g.Key}");
+            foreach (var name in g)
+            {
+                Console.WriteLine(" " + name);
+            }
+        }
+
+
 
 
     }
